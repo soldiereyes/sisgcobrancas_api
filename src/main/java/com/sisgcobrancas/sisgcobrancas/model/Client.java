@@ -4,16 +4,19 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import org.hibernate.annotations.GenericGenerator;
 
 import java.util.UUID;
 
 @Entity
 public class Client {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private UUID id;
     private String nome;
-    private String cpfCnpj;
+    private String cpf;
+    private String cnpj;
     private String email;
     private String telefone;
 
@@ -33,12 +36,20 @@ public class Client {
         this.nome = nome;
     }
 
-    public String getCpfCnpj() {
-        return cpfCnpj;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setCpfCnpj(String cpfCnpj) {
-        this.cpfCnpj = cpfCnpj;
+    public void setCpf(String cpfCnpj) {
+        this.cpf = cpfCnpj;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpjCnpj) {
+        this.cnpj = cnpjCnpj;
     }
 
     public String getEmail() {
