@@ -2,11 +2,11 @@ package com.sisgcobrancas.sisgcobrancas.service;
 
 import com.sisgcobrancas.sisgcobrancas.model.Client;
 import com.sisgcobrancas.sisgcobrancas.repository.ClientRepository;
-import com.sisgcobrancas.sisgcobrancas.exceptions.ClientNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -19,9 +19,8 @@ public class ClientService {
         return clientRepository.save(client);
     }
 
-    public Client getClientById(UUID id) {
-        return clientRepository.findById(id)
-                .orElseThrow(() -> new ClientNotFoundException("Client not found with id: " + id));
+    public Optional<Client> getClientById(UUID id) {
+        return clientRepository.findById(id);
     }
 
     public List<Client> getAllClients() {
