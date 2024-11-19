@@ -1,10 +1,10 @@
-package com.sisgcobrancas.sisgcobrancas;
+package com.destaxa.servidor;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SisgcobrancasApiApplicationTests {
+class DestaxaServerApplicationTests {
 
 	@Test
 	void contextLoads() {

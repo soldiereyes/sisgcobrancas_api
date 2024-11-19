@@ -1,13 +1,13 @@
-package com.sisgcobrancas.sisgcobrancas;
+package com.destaxa.servidor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SisgcobrancasApiApplication {
+public class DestaxaServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SisgcobrancasApiApplication.class, args);
+		SpringApplication.run(DestaxaServerApplication.class, args);
 	}
 
 }
